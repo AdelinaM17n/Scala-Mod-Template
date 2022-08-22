@@ -2,6 +2,7 @@ plugins {
 	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'io.github.juuxel.loom-quiltflower' version '1.7.1'
 	id 'maven-publish'
+	id 'scala'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -20,12 +21,14 @@ repositories {
 
 dependencies {
 	// To change the versions see the gradle.properties file
+	implementation 'org.scala-lang:scala3-library_3:3.0.1'
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.layered() {
 		officialMojangMappings()
 		parchment("${project.parchment_mappings}")
 	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc:fabric-language-scala:0.3.1.+"
 }
 
 processResources {

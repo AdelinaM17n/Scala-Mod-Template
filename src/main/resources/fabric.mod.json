@@ -19,7 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.maheevil.example.ExampleMod"
+      {
+        "adapter": "scala",
+        "value": "io.github.maheevil.example.ExampleMod"
+      }
     ]
   },
   "mixins": [
